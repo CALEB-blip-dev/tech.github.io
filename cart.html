@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | TechGadget</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-robot"></i> Tech<span>Gadget</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="products.html"><i class="fas fa-laptop"></i> Products</a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span></a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="cart-section">
+            <h1>Your Shopping Cart</h1>
+            
+            <div id="cart-empty" class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added anything to your cart yet</p>
+                <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+            
+            <div id="cart-with-items" class="cart-with-items" style="display: none;">
+                <div class="cart-items" id="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+                
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">UGX 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>UGX 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (18%)</span>
+                        <span id="cart-tax">UGX 0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="cart-total">UGX 0</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-checkout">Proceed to Checkout</a>
+                    <a href="products.html" class="btn btn-outline">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="recommendations">
+            <h2>You Might Also Like</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="4K Action Camera">
+                    <div class="product-info">
+                        <h3>4K Action Camera</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(187)</span>
+                        </div>
+                        <p class="price">UGX 560,000 <span class="old-price">UGX 650,000</span></p>
+                        <button class="btn btn-add-to-cart" data-id="3" data-name="4K Action Camera" data-price="560000" data-image="https://images.unsplash.com/photo-1547721064-da6cfb341d50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Wireless Charging Pad">
+                    <div class="product-info">
+                        <h3>Wireless Charging Pad</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(256)</span>
+                        </div>
+                        <p class="price">UGX 130,000</p>
+                        <button class="btn btn-add-to-cart" data-id="4" data-name="Wireless Charging Pad" data-price="130000" data-image="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Bluetooth Speaker">
+                    <div class="product-info">
+                        <h3>Portable Bluetooth Speaker</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(198)</span>
+                        </div>
+                        <p class="price">UGX 330,000 <span class="old-price">UGX 400,000</span></p>
+                        <button class="btn btn-add-to-cart" data-id="5" data-name="Portable Bluetooth Speaker" data-price="330000" data-image="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechGadget</h3>
+                <p>Your one-stop shop for the latest technology and gadgets at competitive prices.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Kampala, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 700 123456</p>
+                <p><i class="fas fa-envelope"></i> support@techgadget.ug</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 TechGadget. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+        // Cart display functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartEmpty = document.getElementById('cart-empty');
+            const cartWithItems = document.getElementById('cart-with-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartSubtotal = document.getElementById('cart-subtotal');
+            const cartTax = document.getElementById('cart-tax');
+            const cartTotal = document.getElementById('cart-total');
+            
+            // Update cart count
+            cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+            
+            if (cart.length === 0) {
+                cartEmpty.style.display = 'block';
+                cartWithItems.style.display = 'none';
+            } else {
+                cartEmpty.style.display = 'none';
+                cartWithItems.style.display = 'block';
+                
+                // Display cart items
+                let subtotal = 0;
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-details">
+                            <h3>${item.name}</h3>
+                            <p class="price">UGX ${item.price.toLocaleString()}</p>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-id="${item.id}"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="remove-btn" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                    `;
+                    
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                // Calculate totals
+                const tax = subtotal * 0.18;
+                const total = subtotal + tax;
+                
+                cartSubtotal.textContent = `UGX ${subtotal.toLocaleString()}`;
+                cartTax.textContent = `UGX ${tax.toLocaleString()}`;
+                cartTotal.textContent = `UGX ${total.toLocaleString()}`;
+                
+                // Add event listeners for quantity controls
+                document.querySelectorAll('.quantity-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const itemId = this.dataset.id;
+                        const isPlus = this.classList.contains('plus');
+                        const isMinus = this.classList.contains('minus');
+                        
+                        const itemIndex = cart.findIndex(item => item.id === itemId);
+                        
+                        if (isPlus) {
+                            cart[itemIndex].quantity += 1;
+                        } else if (isMinus && cart[itemIndex].quantity > 1) {
+                            cart[itemIndex].quantity -= 1;
+                        }
+                        
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        location.reload();
+                    });
+                });
+                
+                // Add event listeners for remove buttons
+                document.querySelectorAll('.remove-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const itemId = this.dataset.id;
+                        const newCart = cart.filter(item => item.id !== itemId);
+                        
+                        localStorage.setItem('cart', JSON.stringify(newCart));
+                        location.reload();
+                    });
+                });
+            }
+            
+            // Add to cart buttons in recommendations
+            document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const product = {
+                        id: this.dataset.id,
+                        name: this.dataset.name,
+                        price: parseInt(this.dataset.price),
+                        image: this.dataset.image,
+                        quantity: 1
+                    };
+
+                    addToCart(product);
+                });
+            });
+            
+            function addToCart(product) {
+                const existingItem = cart.find(item => item.id === product.id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push(product);
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                showAddedToCartMessage(product.name);
+            }
+            
+            function updateCartCount() {
+                const count = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = count;
+            }
+            
+            function showAddedToCartMessage(productName) {
+                const message = document.createElement('div');
+                message.className = 'cart-message';
+                message.innerHTML = `
+                    <p>${productName} added to cart!</p>
+                    <a href="cart.html" class="btn btn-primary">View Cart</a>
+                `;
+                
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.classList.add('show');
+                }, 10);
+                
+                setTimeout(() => {
+                    message.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(message);
+                    }, 300);
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
